@@ -21,7 +21,8 @@ class MyCard extends Component {
                 "color":"gris",
                 "date":"2005"
             },
-        ]
+        ],
+        titre : "Mon catalogue de caisse"
     }
 
     // noCopie = () => {
@@ -51,15 +52,28 @@ class MyCard extends Component {
         return (
 
             <div >
-                <h1 onMouseOver ={this.addStyle}>{this.props.titre}</h1>
+                <h1 onMouseOver ={this.addStyle}>{this.state.titre}</h1>
                 {/* <p onCopy = {this.noCopie}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, esse sit accusantium, fugiat dolorem rem nostrum similique voluptatibus laudantium odit iusto vel placeat inventore temporibus exercitationem quos aperiam minima optio!
                 </p> */}
                 <button onClick = {this.addTenYears}> + 10 ans </button>
-                <Car color ={this.state.voitures[0].color} annee = {year - this.state.voitures[0].date + " ans"} >{this.state.voitures[0].name}</Car>
+
+
+                {/* data en dur  */}
+                {/* <Car color ={this.state.voitures[0].color} annee = {year - this.state.voitures[0].date + " ans"} >{this.state.voitures[0].name}</Car>
                 <Car color ={this.state.voitures[1].color} annee ={year - this.state.voitures[1].date + " ans"}>{this.state.voitures[1].name}</Car>
-                <Car color = {this.state.voitures[2].color} annee ={year - this.state.voitures[2].date + " ans"}>{this.state.voitures[2].name}</Car>
+                <Car color = {this.state.voitures[2].color} annee ={year - this.state.voitures[2].date + " ans"}>{this.state.voitures[2].name}</Car> */}
+
+                {/* maper sur le tableau */}
+                {
+                    this.state.voitures.map((voiture,index) =>{
+                        return(
+                                <Car name = {voiture.name} key ={index} color ={voiture.color} annee = {year - voiture.date}/>
+                            )
 
 
+                    })
+
+                }
 
             </div>
         )

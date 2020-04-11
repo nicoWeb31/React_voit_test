@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MyCard from './components/MyCard'
+import MyappFunctionProps from './components/parent_enfant_funct_props/propsFunction';
 
 
 
@@ -33,11 +34,13 @@ class App  extends Component {
 
     return (
       <div className="App">
-        <MyCard titre ={this.state.titre}/>
+        <MyCard/>
         {/* <button onClick = {this.changeTitle} >changer le noms en dur</button>
         <button onClick = {()=>this.changTiltleParam("Encore un nouveau titre")} >changer le noms via param</button>
         <button onClick = {this.changeViaBind.bind(this,"titre via le bind")} >changer le noms via un bind</button>
         <input type="text" onChange = {this.changeInput} value ={this.state.titre}/> */}
+
+        <MyappFunctionProps ></MyappFunctionProps>
 
 
       </div>
