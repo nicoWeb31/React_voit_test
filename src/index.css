@@ -16,3 +16,20 @@ h1.styled {
   color: red;
   text-transform: uppercase;
 }
+
+.carsTable tr:hover {
+    background-color: aliceblue;
+}
+
+.carsTable {
+  margin: auto;
+  margin-top: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(128, 113, 218);
+  color: rgb(31, 37, 42);
+}
+
+.carsTable th {
+  background-color: brown;
+}

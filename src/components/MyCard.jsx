@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component,Fragment} from 'react';
 import Car from './Cars'
 
 
@@ -50,12 +50,20 @@ class MyCard extends Component {
 
         const year = new Date().getFullYear();
         return (
-
-            <div >
+            // fragment remplace la div utile pour validation du code html utilsation avec key ou <> -- </> mais key pas utilisable
+            <Fragment > 
                 <h1 onMouseOver ={this.addStyle}>{this.state.titre}</h1>
                 {/* <p onCopy = {this.noCopie}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, esse sit accusantium, fugiat dolorem rem nostrum similique voluptatibus laudantium odit iusto vel placeat inventore temporibus exercitationem quos aperiam minima optio!
                 </p> */}
                 <button onClick = {this.addTenYears}> + 10 ans </button>
+                <table className ="carsTable">
+                <tr>
+                    <th>Marque</th>
+                    <th>Age</th>
+                    <th>Couleur</th>
+
+                </tr>
+                
 
 
                 {/* data en dur  */}
@@ -66,16 +74,18 @@ class MyCard extends Component {
                 {/* maper sur le tableau */}
                 {
                     this.state.voitures.map((voiture,index) =>{
+                        
                         return(
-                                <Car name = {voiture.name} key ={index} color ={voiture.color} annee = {year - voiture.date}/>
-                            )
-
-
+                            <Fragment key = 'index'>
+                                    <Car name = {voiture.name} key ={index} color ={voiture.color} annee = {year - voiture.date}/>
+                            </Fragment>
+                                )
                     })
 
                 }
+                </table>
+            </Fragment>
 
-            </div>
         )
     }
 }
