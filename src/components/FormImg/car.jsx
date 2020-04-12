@@ -1,15 +1,18 @@
 import React,{Fragment} from 'react';
-import carP from './car.png' 
+import carP from './car.png' ;
+import '../../style/main.css';
+import styles from '../../style/myCss.module.css'
 
 
 const Cars = ({color,height,name}) => {
 // console.log(name)
     return (
         <Fragment>
-        <h1>image png</h1>
+        <h1 style = {{fontSize : "53px", color :'red' }}>image png</h1>
             <img src={carP} alt=""/>
+            <h2 className={styles.green}>style via module</h2>
 
-        <h1>image svg</h1>
+        <h1 className ="blue">image svg</h1>
                 <svg className = "carBorder"
             enableBackground="new 0 0 1000 600" height={height} id="Shape_1_7_" overflow="visible" version="1.1"
             viewBox="0 0 1000 600" width="500">

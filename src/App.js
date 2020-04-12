@@ -4,7 +4,9 @@ import MyCard from './components/MyCard'
 import MyappFunctionProps from './components/parent_enfant_funct_props/propsFunction';
 import MyappDestructuring  from './components/destructuring/destructuringApp';
 import MyappCondtionGame  from './components/conditionGame/conditionGames';
-import MyappFormImg from './components/FormImg/FormImg'
+import MyappFormImg from './components/FormImg/FormImg';
+import MyappLifeCycle from './components/LifeCycle/LifeCycle';
+
 
 
 
@@ -13,7 +15,8 @@ import MyappFormImg from './components/FormImg/FormImg'
 class App  extends Component {
 
   state = {
-    "titre" : "Mon catalogue voiture"
+    titre : "Mon catalogue voiture",
+    display :true
   }
 
   // changeTitle = (e) =>{
@@ -34,8 +37,16 @@ class App  extends Component {
   //   this.setState({titre : e.target.value })
   // }
 
+  divHidden = () =>{
+    this.setState({
+      display: !this.state.display
+    })
+  }
 
   render(){
+
+    const showComponent = this.state.display ? (<MyappLifeCycle name ="totoN2"/>) : ""
+
 
     return (
       <div className="App">
@@ -52,6 +63,9 @@ class App  extends Component {
         <MyappCondtionGame></MyappCondtionGame>
 
         <MyappFormImg></MyappFormImg>
+
+        {showComponent}
+        <button onClick ={this.divHidden}>click here !</button>
 
 
       </div>

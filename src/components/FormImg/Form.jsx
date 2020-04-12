@@ -1,5 +1,12 @@
 import React,{Component} from 'react';
-import Car from './car'
+import Car from './car';
+import styled from 'styled-components';
+
+const Title = styled.h1 `
+color : red;
+font-size : 70px;
+background-color: blue;
+`
 
 
 
@@ -50,10 +57,11 @@ class Form extends Component {
             <div >
                 <Car height ="400" color = {this.state.color} name = {this.state.username}/>
                 <h1>Commentaire</h1>
+                <Title>comSyled component</Title>
                 
                 <form action="" onSubmit={this.submitForm}>
                     <div>
-                    <label htmlFor="">Pseudo</label>
+                    <label>Pseudo</label>
                     <input type="text" value = {this.state.username} onChange = {this.handlerPseudo} name="usersName"/>
                     </div>
                     <div>
@@ -71,7 +79,7 @@ class Form extends Component {
                         <textarea value = {this.state.comment}  onChange = {this.handlerComment} cols="30" rows="10" />
                     </div>
 
-                    <button >valider</button>
+                    <button className = "">valider</button>
                 </form>
 
             </div>
