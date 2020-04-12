@@ -33,3 +33,7 @@ h1.styled {
 .carsTable th {
   background-color: brown;
 }
+
+.carBorder{
+  border: 2px solid red;
+}

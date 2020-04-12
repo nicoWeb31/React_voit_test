@@ -4,6 +4,7 @@ import MyCard from './components/MyCard'
 import MyappFunctionProps from './components/parent_enfant_funct_props/propsFunction';
 import MyappDestructuring  from './components/destructuring/destructuringApp';
 import MyappCondtionGame  from './components/conditionGame/conditionGames';
+import MyappFormImg from './components/FormImg/FormImg'
 
 
 
@@ -49,6 +50,8 @@ class App  extends Component {
         <MyappDestructuring></MyappDestructuring>
 
         <MyappCondtionGame></MyappCondtionGame>
+
+        <MyappFormImg></MyappFormImg>
 
 
       </div>
